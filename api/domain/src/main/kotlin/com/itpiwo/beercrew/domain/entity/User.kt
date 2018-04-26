@@ -10,6 +10,6 @@ data class User(
 ) {
     fun checkin(beer: Beer, comment: String, serving: Serving) {
         val checkin =  Checkin(beer, comment, serving)
-        (checkins as MutableList).add(checkin)
+        (checkins as? MutableList)?.add(checkin)
     }
 }
